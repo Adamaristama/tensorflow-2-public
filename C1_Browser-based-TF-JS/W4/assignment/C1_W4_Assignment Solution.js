@@ -26,9 +26,11 @@ async function train() {
   model = tf.sequential({
     layers: [
       tf.layers.flatten({inputShape: mobilenet.outputs[0].shape.slice(1)}),
-      tf.layers.dense({ units: 100, activation: 'relu'}),
-      tf.layers.dense({ units: 5, activation: 'softmax'})
+      tf.layers.dense({unit:100, activation:'relu'}),
+      tf.layers.dense({units:5, activation: 'softmax'})
+        
       // YOUR CODE HERE
+
     ]
   });
     
@@ -74,11 +76,15 @@ function handleButton(elem){
 			break;
     case "4":
       lizardSamples++;
-      document.getElementById("lizardsamples").innerText = "Lizard samples:" + lizardSamples;
+      document.getElementById("lizardsamples").innerText = "Lizard samples:"+ lizardSamples;
       break;
+            
         // Add a case for lizard samples.
-        // HINT: Look at the previous cases. 
-        // YOUR CODE HERE   
+        // HINT: Look at the previous cases.
+            
+        // YOUR CODE HERE
+		
+            
 	}
 	label = parseInt(elem.id);
 	const img = webcam.capture();
@@ -112,9 +118,13 @@ async function predict() {
     case 4:
       predictionText = "I see Lizard";
       break;
+            
         // Add a case for lizard samples.
         // HINT: Look at the previous cases.
-        // YOUR CODE HERE       
+            
+        // YOUR CODE HERE 
+	
+            
 	}
 	document.getElementById("prediction").innerText = predictionText;
 			
